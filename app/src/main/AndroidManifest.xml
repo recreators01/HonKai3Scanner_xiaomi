@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA"  /> <!-- 摄像头权限 -->
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HonKai3Scanner"
+        tools:targetApi="31">
+
+        <!--        小米sdk初始化-->
+        <meta-data
+            android:name="miGameAppId"
+            android:value="mi_2882303761517502034" />
+        <meta-data
+            android:name="miGameAppKey"
+            android:value="mi_5841750261034" />
+        <!--        ${applicationId}  替换为游戏包名        -->
+        <provider
+            android:name="com.xiaomi.gamecenter.sdk.MiOauthProvider"
+            android:authorities="com.recre.honkai3scanner.mi.mi_provider"
+            android:enabled="true"
+            android:exported="false" />
+
+
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".QRCodeScanActivity"/>
+    </application>
+
+</manifest>

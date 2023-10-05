@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HonKai3Scanner</string>
+    <string name="button">琪亚娜，出击！！！</string>
+    <string name="tips_scan_qr_code">将二维码放入框内，即可自动扫描</string>
+</resources>
